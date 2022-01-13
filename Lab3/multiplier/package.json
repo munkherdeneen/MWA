@@ -1,0 +1,20 @@
+{
+  "name": "multiplier",
+  "version": "1.0.0",
+  "description": "Multiply 2 given numbers and respond application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "Multiplier"
+  ],
+  "author": "Munkh-erdene Enkhtaivan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2"
+  }
+}

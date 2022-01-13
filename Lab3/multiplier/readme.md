@@ -1,0 +1,1 @@
+"This is to multiply given 2 values and respond the result"
