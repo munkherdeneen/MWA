@@ -1,0 +1,1 @@
+"This is Mean Game application for MWA course"
