@@ -117,6 +117,8 @@ _deletePerson = function(req, res, company, personId) {
             response.status = 404;
             response.message = {"message":"GameID not found" + personId};
         }
+
+        res.status(response.status).json(response.message);
     });
 };
 
@@ -143,9 +145,9 @@ deleteOne = function(req, res) {
             response.message = err;
         } 
         else if(!company) {
-            console.log("Person not found");
+            console.log("Company not found");
             response.status = 404;
-            response.message = {"message":"Person not found"};
+            response.message = {"message":"Company not found"};
         }
 
         if(response.status == 204) {
@@ -157,8 +159,138 @@ deleteOne = function(req, res) {
     });
 };
 
+_addKeyPerson = function(req, res, company) {
+    company.keyPeople.name = req.body.name;
+    company.keyPeople.title = req.body.title;
+
+    company.save(function(err, addedGame) {
+        const response = {
+            status: 201,
+            message: company.keyPeople
+        }
+
+        if(err) {
+            response.status = 500;
+            response.message = err;
+        } else if(!company) {
+            response.status = 404;
+            response.message = {"message":"CompanyId not found" + company};
+        }
+
+        res.status(response.status).json(response.message);
+    });
+}
+
+addOne = function(req, res) {
+    console.log("AddOne invoked");
+    const companyId = req.params.companyId;
+
+    if(!mongoose.isValidObjectId(companyId)) {
+        console.log("CompanyId must be a valid Id");
+        res.status(500).json({"message":"CompanyId must be a valid Id"});
+        return;
+    }
+
+    Company.findById(companyId).exec(function(err, company) {
+        const response = {
+            status: 201,
+            message: company.keyPeople
+        };
+
+        if(err) {
+            console.log("error occurred during find a company");
+            response.status = 500;
+            response.message = err;
+        }
+        else if(!company) {
+            console.log("Company not found", companyId);
+            response.status = 404;
+            response.message = {"message":"Company not found"};
+        } 
+        
+        if(response.status == 201) {
+            _addKeyPerson(req, res, company);
+        } 
+        else {
+            res.status(response.status).json(response.message);
+        }
+    });
+};
+
+_updatePerson = function(res, req, company, personId, updatingPerson) {
+    Company.findByIdAndUpdate(personId, updatingPerson).exec(function(err, updatedPerson) {
+        const response = {
+            status: 200,
+            message: updatingPerson
+        }
+
+        if(err) {
+            console.log("Error occurred during find a company");
+            response.status = 500;
+            response.message = err;
+        } 
+        else if(!updatedPerson) {
+            console.log("Person not found");
+            response.status = 404;
+            response.message = {"message":"Person not found"};
+        }
+
+        res.status(response.status).json(response.message);
+    });
+};
+
+updateOne = function(req, res) {
+    console.log("AddOne invoked");
+    const companyId = req.params.companyId;
+    const personId = req.params.personId;
+
+    const updatingPerson = {
+        name: req.body.name,
+        title: req.body.title
+    }
+
+    if(isString(updatingPerson.name) || isString(updatingPerson.title)) {
+        console.log("Person name or title must be a string");
+        res.status(400).json({"message":"Person name or title must be a string"});
+        return;
+    }
+
+    if(!mongoose.isValidObjectId(companyId)) {
+        console.log("CompanyId must be a valid Id");
+        res.status(500).json({"message":"CompanyId must be a valid Id"});
+        return;
+    }
+
+    Company.findById(companyId).exec(function(err, company) {
+        const response = {
+            status: 204,
+            message: company
+        }
+        
+        if(err) {
+            console.log("Error occurred during find a company");
+            response.status = 500;
+            response.message = err;
+        } 
+        else if(!company) {
+            console.log("Company not found");
+            response.status = 404;
+            response.message = {"message":"Company not found"};
+        }
+
+        if(response.status == 204) {
+            _updatePerson(req, res, company, personId, updatingPerson);
+        }
+        else {
+            res.status(response.status).json(response.message);
+        }
+    });
+}
+
 module.exports = {
     getAll,
     getOne,
-    deleteOne
+    deleteOne,
+    addOne,
+    updateOne
 }

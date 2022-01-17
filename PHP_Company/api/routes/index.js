@@ -19,11 +19,13 @@ router.route("/companies/:companyId")
 
 router.route("/companies/:companyId/keypeople")
     .get(keyPeopleController.getAll)
+    .post(keyPeopleController.addOne)
     ;
 
 router.route("/companies/:companyId/keypeople/:personId")
     .get(keyPeopleController.getOne)
     .delete(keyPeopleController.deleteOne)
+    .put(keyPeopleController.updateOne)
     ;
 
 module.exports = router;
