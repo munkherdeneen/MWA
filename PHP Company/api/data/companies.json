@@ -1,0 +1,540 @@
+[
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d461a"
+		},
+		"name": "Amazon",
+		"rank": 2,
+		"industry": "Retail",
+		"keyPeople": [
+			{
+				"name": "Jeff Bezos",
+				"title": "Executive Chairman"
+			},
+			{
+				"name": "Andy Jassy",
+				"title": "President & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d461b"
+		},
+		"name": "Walmart",
+		"rank": 1,
+		"industry": "Retail",
+		"keyPeople": [
+			{
+				"name": "Greg Penner",
+				"title": "Chairman"
+			},
+			{
+				"name": "Doug McMillon",
+				"title": "President, CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d461c"
+		},
+		"name": "ExxonMobil",
+		"rank": 5,
+		"industry": "Petroleum industry",
+		"keyPeople": [
+			{
+				"name": "Darren Woods",
+				"title": "chairman & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d461d"
+		},
+		"name": "UnitedHealth Group",
+		"rank": 6,
+		"industry": "Healthcare",
+		"keyPeople": [
+			{
+				"name": "Stephen J. Hemsley",
+				"title": "Executive Chairman"
+			},
+			{
+				"name": "Larry C. Renfro",
+				"title": "Vice Chairman"
+			},
+			{
+				"name": "Andrew Witty",
+				"title": "CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d461e"
+		},
+		"name": "Berkshire Hathaway",
+		"rank": 7,
+		"industry": "Conglomerate",
+		"keyPeople": [
+			{
+				"name": "Warren E. Buffett",
+				"title": "Chairman & CEO"
+			},
+			{
+				"name": "Charles T. Munger",
+				"title": "Vice Chairman"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d461f"
+		},
+		"name": "AmerisourceBergen",
+		"rank": 9,
+		"industry": "Pharmaceutical industry",
+		"keyPeople": [
+			{
+				"name": "Richard C. Gozon",
+				"title": "Chairman"
+			},
+			{
+				"name": "Steven H. Collis",
+				"title": "President, CEO & Director"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4620"
+		},
+		"name": "McKesson Corporation",
+		"rank": 8,
+		"industry": "Healthcare",
+		"keyPeople": [
+			{
+				"name": "Brian S. Tyler",
+				"title": "CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4621"
+		},
+		"name": "CVS Health",
+		"rank": 4,
+		"industry": "Healthcare",
+		"keyPeople": [
+			{
+				"name": "Karen S. Lynch",
+				"title": "President & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4622"
+		},
+		"name": "Apple Inc.",
+		"rank": 3,
+		"industry": "Electronics industry",
+		"keyPeople": [
+			{
+				"name": "Arthur D. Levinson",
+				"title": "Chairman"
+			},
+			{
+				"name": "Tim Cook",
+				"title": "CEO"
+			},
+			{
+				"name": "Jeff Williams",
+				"title": "COO"
+			},
+			{
+				"name": "Luca Maestri",
+				"title": "CFO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4623"
+		},
+		"name": "Cigna",
+		"rank": 12,
+		"industry": "Health Insurance",
+		"keyPeople": [
+			{
+				"name": "Isaiah Harris Jr.",
+				"title": "Chairman"
+			},
+			{
+				"name": "David Cordani",
+				"title": "President & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4624"
+		},
+		"name": "Ford Motor Company",
+		"rank": 13,
+		"industry": "Automotive industry",
+		"keyPeople": [
+			{
+				"name": "William Clay Ford Jr.",
+				"title": "Executive Chairman"
+			},
+			{
+				"name": "Jim Farley",
+				"title": "President & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4625"
+		},
+		"name": "Costco",
+		"rank": 14,
+		"industry": "Retail",
+		"keyPeople": [
+			{
+				"name": "Hamilton E. James",
+				"title": "Chairman"
+			},
+			{
+				"name": "W. Craig Jelinek",
+				"title": "President & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4626"
+		},
+		"name": "AT&T",
+		"rank": 11,
+		"industry": "Conglomerate",
+		"keyPeople": [
+			{
+				"name": "William Kennard",
+				"title": "Executive Chairman"
+			},
+			{
+				"name": "John Stankey",
+				"title": "CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4627"
+		},
+		"name": "FedEx",
+		"rank": 15,
+		"industry": "Transportation",
+		"keyPeople": [
+			{
+				"name": "Frederick W. Smith",
+				"title": "Chairman & CEO"
+			},
+			{
+				"name": "Raj Subramaniam",
+				"title": "President & COO"
+			},
+			{
+				"name": "Mike Lenz",
+				"title": "President & CFO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4628"
+		},
+		"name": "Cardinal Health",
+		"rank": 17,
+		"industry": "Healthcare",
+		"keyPeople": [
+			{
+				"name": "Michael Kaufmann",
+				"title": "CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4629"
+		},
+		"name": "Chevron Corporation",
+		"rank": 16,
+		"industry": "Petroleum industry",
+		"keyPeople": [
+			{
+				"name": "Michael Wirth",
+				"title": "Chairman & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d462a"
+		},
+		"name": "Microsoft",
+		"rank": 18,
+		"industry": "Technology",
+		"keyPeople": [
+			{
+				"name": "Satya Nadella",
+				"title": "Chairman & CEO"
+			},
+			{
+				"name": "Brad Smith",
+				"title": "Vice Chairman & President"
+			},
+			{
+				"name": "Bill Gates",
+				"title": "Technical Adviser"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d462b"
+		},
+		"name": "Alphabet Inc.",
+		"rank": 10,
+		"industry": "Technology",
+		"keyPeople": [
+			{
+				"name": "John L. Hennessy",
+				"title": "Chairman"
+			},
+			{
+				"name": "Sundar Pichai",
+				"title": "CEO"
+			},
+			{
+				"name": "Ruth Porat",
+				"title": "CFO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d462c"
+		},
+		"name": "General Motors",
+		"rank": 20,
+		"industry": "Automotive",
+		"keyPeople": [
+			{
+				"name": "Mary Barra",
+				"title": "Chairperson & CEO"
+			},
+			{
+				"name": "Mark Reuss",
+				"title": "President"
+			},
+			{
+				"name": "Paul A. Jacobson",
+				"title": "CFO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d462d"
+		},
+		"name": "JPMorgan Chase",
+		"rank": 19,
+		"industry": "Financial services",
+		"keyPeople": [
+			{
+				"name": "Jamie Dimon",
+				"title": "Chairman & CEO"
+			},
+			{
+				"name": "Daniel E. Pinto",
+				"title": "Co-President & COO"
+			},
+			{
+				"name": "Gordon A. Smith",
+				"title": "Co-President & COO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d462e"
+		},
+		"name": "Walgreens Boots Alliance",
+		"rank": 21,
+		"industry": "Pharmaceutical industry",
+		"keyPeople": [
+			{
+				"name": "Stefano Pessina",
+				"title": "Executive Chairman"
+			},
+			{
+				"name": "Rosalind Brewer",
+				"title": "CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d462f"
+		},
+		"name": "Verizon Communications",
+		"rank": 22,
+		"industry": "Telecommunications",
+		"keyPeople": [
+			{
+				"name": "Hans Vestberg",
+				"title": "Chairman & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4630"
+		},
+		"name": "Marathon Petroleum",
+		"rank": 23,
+		"industry": "Petroleum industry",
+		"keyPeople": [
+			{
+				"name": "Mike Hennigan",
+				"title": "President & CEO"
+			},
+			{
+				"name": "John P. Surma",
+				"title": "Non-Executive Chairman of the Board of Directors"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4631"
+		},
+		"name": "Kroger",
+		"rank": 24,
+		"industry": "Retail",
+		"keyPeople": [
+			{
+				"name": "Rodney McMullen",
+				"title": "CEO & Chairman"
+			},
+			{
+				"name": "Michael Donnelly",
+				"title": "COO"
+			},
+			{
+				"name": "Gary Millerchip",
+				"title": "CFO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4632"
+		},
+		"name": "Bank of America",
+		"rank": 26,
+		"industry": "Financials",
+		"keyPeople": [
+			{
+				"name": "Brian Moynihan",
+				"title": "Chairman & CEO"
+			},
+			{
+				"name": "Anne Finucane",
+				"title": "Co-Vice Chairman"
+			},
+			{
+				"name": "Bruce Thompson",
+				"title": "Co-Vice Chairman"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4633"
+		},
+		"name": "Fannie Mae",
+		"rank": 25,
+		"industry": "Financials",
+		"keyPeople": [
+			{
+				"name": "Sheila Bair",
+				"title": "Chairman"
+			},
+			{
+				"name": "Hugh R. Frater",
+				"title": "CEO"
+			},
+			{
+				"name": "David C. Benson",
+				"title": "President"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4634"
+		},
+		"name": "Phillips 66",
+		"rank": 28,
+		"industry": "Petroleum industry",
+		"keyPeople": [
+			{
+				"name": "Greg Garland",
+				"title": "Chairman & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4635"
+		},
+		"name": "The Home Depot",
+		"rank": 27,
+		"industry": "Retail",
+		"keyPeople": [
+			{
+				"name": "Craig Menear",
+				"title": "Chairman & CEO"
+			}
+		]
+	},
+	{
+		"_id": {
+			"$oid": "61e46e843bd82de7da8d4636"
+		},
+		"name": "Comcast",
+		"rank": 29,
+		"industry": "Telecommunications",
+		"keyPeople": [
+			{
+				"name": "Brian L. Roberts",
+				"title": "Chairman & CEO"
+			},
+			{
+				"name": "Michael Cavanagh",
+				"title": "Vice president & Director & CFO"
+			},
+			{
+				"name": "David L. Cohen",
+				"title": "Vice president & Director"
+			}
+		]
+	}
+]

@@ -1,0 +1,24 @@
+{
+  "name": "php-company",
+  "version": "1.0.0",
+  "description": "Personal Hobby Project - US Companies",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PHP",
+    "Companies",
+    "EXPRESS",
+    "MONGOOSE",
+    "NodeJS"
+  ],
+  "author": "MUNKH-ERDENE Enkhtaivan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^12.0.4",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6"
+  }
+}
