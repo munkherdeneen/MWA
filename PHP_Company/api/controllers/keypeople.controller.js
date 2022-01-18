@@ -104,7 +104,7 @@ getOne = function(req, res) {
     });
 };
 
-_deletePerson = function(req, res, company, personId) {
+const _deletePerson = function(req, res, company, personId) {
     company.deleteOne(personId, function(err, deletedPerson) {
         const response = {
             status: 204,
@@ -115,7 +115,7 @@ _deletePerson = function(req, res, company, personId) {
             response.message = err;
         } else if(!deletedPerson) {
             response.status = 404;
-            response.message = {"message":"GameID not found" + personId};
+            response.message = {"message":"Person not found" + personId};
         }
 
         res.status(response.status).json(response.message);
@@ -163,19 +163,16 @@ _addKeyPerson = function(req, res, company) {
     company.keyPeople.name = req.body.name;
     company.keyPeople.title = req.body.title;
 
-    company.save(function(err, addedGame) {
+    company.save(function(err, addedPerson) {
         const response = {
             status: 201,
-            message: company.keyPeople
+            message: addedPerson
         }
 
         if(err) {
             response.status = 500;
             response.message = err;
-        } else if(!company) {
-            response.status = 404;
-            response.message = {"message":"CompanyId not found" + company};
-        }
+        }         
 
         res.status(response.status).json(response.message);
     });
@@ -217,7 +214,7 @@ addOne = function(req, res) {
     });
 };
 
-_updatePerson = function(res, req, company, personId, updatingPerson) {
+const _updatePerson = function(res, personId, updatingPerson) {
     Company.findByIdAndUpdate(personId, updatingPerson).exec(function(err, updatedPerson) {
         const response = {
             status: 200,
@@ -279,7 +276,7 @@ updateOne = function(req, res) {
         }
 
         if(response.status == 204) {
-            _updatePerson(req, res, company, personId, updatingPerson);
+            _updatePerson(res, personId, updatingPerson);
         }
         else {
             res.status(response.status).json(response.message);
