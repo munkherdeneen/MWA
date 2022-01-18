@@ -78,7 +78,7 @@ addOne = function(req, res) {
         name: req.body.name,
         rank: req.body.rank,
         industry: req.body.industry,
-        keyPeople: []
+        keyPeople: req.body.keyPeople
     }
 
     Company.create(newCompany, function(err, company) {
@@ -92,8 +92,6 @@ addOne = function(req, res) {
             response.status = 500;
             response.message = err;
         }
-
-        console.log("Company added " , company);
         res.status(response.status).json(company);
     });
 };
@@ -130,7 +128,7 @@ deleteOne = function(req, res) {
 }
 
 updateOne = function(req, res) {
-    console.log("deleteOne invoked");
+    console.log("UpdateOne invoked");
     const companyId = req.params.companyId;
 
     if(!mongoose.isValidObjectId(companyId)) {
@@ -143,7 +141,7 @@ updateOne = function(req, res) {
         name: req.body.name,
         rank: req.body.rank,
         industry: req.body.industry,
-        keyPeople: []
+        keyPeople: req.body.keyPeople
     }
     
     Company.findByIdAndUpdate(companyId, updatingCompany).exec(function(err, updatedCompany) {

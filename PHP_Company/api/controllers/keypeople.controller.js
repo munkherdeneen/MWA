@@ -71,8 +71,8 @@ getOne = function (req, res) {
     const personId = req.params.personId;
 
     if (!mongoose.isValidObjectId(companyId) || !mongoose.isValidObjectId(personId)) {
-        console.log("CompanyId must be a valid Id");
-        res.status(500).json({ "message": "CompanyId must be a valid Id" });
+        console.log("CompanyId | PersonId must be a valid Id");
+        res.status(500).json({ "message": "CompanyId | PersonId  must be a valid Id" });
         return;
     }
 
@@ -94,7 +94,7 @@ getOne = function (req, res) {
         }
         else {
             const person = company.keyPeople.id(personId);
-            if(!person) {
+            if (!person) {
                 console.log("Person not found");
                 response.status = 404;
                 response.message = { "message": "Person not found" };
@@ -117,8 +117,8 @@ const _deletePerson = function (res, company, personId) {
     }
 
     person.remove();
-    company.save(function() {
-        res.status(204).json({"message":"person deleted"});
+    company.save(function () {
+        res.status(204).json({ "message": "person deleted" });
     });
 };
 
@@ -128,8 +128,8 @@ deleteOne = function (req, res) {
     const personId = req.params.personId;
 
     if (!mongoose.isValidObjectId(companyId) || !mongoose.isValidObjectId(personId)) {
-        console.log("CompanyId || person Id must be a valid Id");
-        res.status(500).json({ "message": "CompanyId || person Id must be a valid Id" });
+        console.log("CompanyId || PersonId must be a valid Id");
+        res.status(500).json({ "message": "CompanyId || PersonId must be a valid Id" });
         return;
     }
 
@@ -161,18 +161,25 @@ deleteOne = function (req, res) {
 
 _addKeyPerson = function (req, res, company) {
     const people = company.keyPeople;
-    people.set(req.body);
+    const newPerson = {
+        name: req.body.name,
+        title: req.body.title
+    }
+
+    people.set(newPerson);
     company.save(function (err) {
         const response = {
             status: 201,
-            message: "Person added"
+            message: req.body
         }
 
         if (err) {
+            console.log("error occured while adding person", err);
             response.status = 500;
             response.message = err;
         }
 
+        console.log(response.message);
         res.status(response.status).json(response.message);
     });
 }
@@ -213,47 +220,47 @@ addOne = function (req, res) {
     });
 };
 
-const _updatePerson = function (res, personId, updatingPerson) {
-    Company.findByIdAndUpdate(personId, updatingPerson).exec(function (err, updatedPerson) {
-        const response = {
-            status: 200,
-            message: updatingPerson
-        }
+const _updatePerson = function (res, req, company) {
+    const person = company.keyPeople.id(req.params.personId);
 
-        if (err) {
-            console.log("Error occurred during find a company");
-            response.status = 500;
-            response.message = err;
-        }
-        else if (!updatedPerson) {
-            console.log("Person not found");
-            response.status = 404;
-            response.message = { "message": "Person not found" };
-        }
+    const response = {
+        status: 200,
+        message: person
+    }
 
-        res.status(response.status).json(response.message);
-    });
+    if (!person) {
+        console.log("Person not found");
+        response.status = 404;
+        response.message = { "message": "Person not found" };
+    }
+    else {
+        person.set(req.body);
+        company.save(function (err) {
+            if (err) {
+                console.log("Error occurred during find a company");
+                response.status = 500;
+                response.message = err;
+            }
+        });
+    }
+
+    res.status(response.status).json(response.message);    
 };
 
 updateOne = function (req, res) {
-    console.log("AddOne invoked");
+    console.log("UpdateOne keypeople invoked");
     const companyId = req.params.companyId;
     const personId = req.params.personId;
 
-    const updatingPerson = {
-        name: req.body.name,
-        title: req.body.title
-    }
+    // if (isString(updatingPerson.name) || isString(updatingPerson.title)) {
+    //     console.log("Person name or title must be a string");
+    //     res.status(400).json({ "message": "Person name or title must be a string" });
+    //     return;
+    // }
 
-    if (isString(updatingPerson.name) || isString(updatingPerson.title)) {
-        console.log("Person name or title must be a string");
-        res.status(400).json({ "message": "Person name or title must be a string" });
-        return;
-    }
-
-    if (!mongoose.isValidObjectId(companyId)) {
-        console.log("CompanyId must be a valid Id");
-        res.status(500).json({ "message": "CompanyId must be a valid Id" });
+    if (!mongoose.isValidObjectId(companyId) || !mongoose.isValidObjectId(personId)) {
+        console.log("CompanyId | PersonId must be a valid Id");
+        res.status(500).json({ "message": "CompanyId | PersonId must be a valid Id" });
         return;
     }
 
@@ -275,7 +282,7 @@ updateOne = function (req, res) {
         }
 
         if (response.status == 204) {
-            _updatePerson(res, personId, updatingPerson);
+            _updatePerson(res, req, company);
         }
         else {
             res.status(response.status).json(response.message);
