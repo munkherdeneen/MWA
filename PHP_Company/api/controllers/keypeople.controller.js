@@ -159,7 +159,7 @@ deleteOne = function (req, res) {
     });
 };
 
-_addKeyPerson = function (req, res, company) {
+const _addKeyPerson = function (req, res, company) {
     const people = company.keyPeople;
     const newPerson = {
         name: req.body.name,
