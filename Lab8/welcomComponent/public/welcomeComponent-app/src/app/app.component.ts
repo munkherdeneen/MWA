@@ -14,6 +14,7 @@ export class AppComponent {
     if(this.showWelcome) {
       this.showWelcome = false;
       this.showAbout = true;
+      
     } 
     else {
       this.showWelcome = true;
