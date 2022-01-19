@@ -11,7 +11,13 @@ export class AppComponent {
   showWelcome:boolean = true;
 
   onClickBtn() {
-    this.showWelcome = false;
-    this.showAbout = true;
+    if(this.showWelcome) {
+      this.showWelcome = false;
+      this.showAbout = true;
+    } 
+    else {
+      this.showWelcome = true;
+      this.showAbout = false;
+    }
   }
 }
