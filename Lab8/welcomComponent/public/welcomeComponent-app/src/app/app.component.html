@@ -1,2 +1,7 @@
-<app-welcome></app-welcome>
+<div *ngIf="showWelcome">
+    <app-welcome></app-welcome>
+</div>
+<div *ngIf="showAbout">
+    <app-about></app-about>
+</div>
 <button (click)="onClickBtn()">About us</button>

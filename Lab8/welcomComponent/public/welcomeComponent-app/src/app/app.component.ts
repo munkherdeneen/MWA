@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'welcomeComponent-app';
+  showAbout:boolean = false;
+  showWelcome:boolean = true;
 
   onClickBtn() {
-    this.title = "Clicked";
+    this.showWelcome = false;
+    this.showAbout = true;
   }
 }
