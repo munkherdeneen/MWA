@@ -4,4 +4,5 @@
 <div *ngIf="showAbout">
     <app-about></app-about>
 </div>
-<button (click)="onClickBtn()">About us</button>
+<button (click)="onClickBtn()" *ngIf="showAbout">About component</button>
+<button (click)="onClickBtn()" *ngIf="showWelcome">Welcome component</button>
