@@ -1,0 +1,22 @@
+{
+  "name": "jobsearch",
+  "version": "1.0.0",
+  "description": "This is project W2 JobSearch application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JobSearch",
+    "NodeJS",
+    "Express"
+  ],
+  "author": "Munkh-erdene Enkhtaivan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7"
+  }
+}

@@ -1,0 +1,21 @@
+The jobs are<br />
+
+<ul>
+    <a routerLink="/job/:jobId">
+        <li *ngFor="let job of jobs">{{job.title}} {{job.salary | currency}}</li>
+    </a>
+</ul>
+
+<br />
+
+Add new Job: <br/>
+<form>
+    Title: <input type="text" id="title" name="title" required [(ngModel)]= "newJob.title" />
+    Salary: <input type="text" id="salary" name="salary" required [(ngModel)]= "newJob.salary" />
+    Description: <input type="text" id="description" name="description" required [(ngModel)]= "newJob.description" />
+    <br/>
+    Skills: <input type="text" id="skills" name="skills" required [(ngModel)]= "newJob.skills" />
+    Experience: <input type="text" id="experience" name="experience" required [(ngModel)]= "newJob.experience" />
+    <br/>
+    <button (click)= "save()" type="submit" class="btn btn-success">Add Job</button>
+</form>

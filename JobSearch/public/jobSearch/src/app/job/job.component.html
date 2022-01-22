@@ -1,0 +1,26 @@
+<h1>{{job.title}}</h1>
+<br/>
+Salary: {{job.salary}}
+<br/>
+Description: {{job.description}}
+<br/>
+Skills: {{job.skills}}
+<br/>
+Experience: {{job.experience}}
+<br/>
+PostDate: {{job.postDate}}
+<br/>
+<br/>
+
+Update the Job: <br/>
+<form>
+    Title: <input type="text" id="title" name="title" required [(ngModel)]= "selectedJob.title" />
+    Salary: <input type="text" id="salary" name="salary" required [(ngModel)]= "selectedJob.salary" />
+    Description: <input type="text" id="description" name="description" required [(ngModel)]= "selectedJob.description" />
+    <br/>
+    Skills: <input type="text" id="skills" name="skills" required [(ngModel)]= "selectedJob.skills" />
+    Experience: <input type="text" id="experience" name="experience" required [(ngModel)]= "selectedJob.experience" />
+    <br/>
+    <button (click)= "delete()" type="submit" class="btn btn-success">Delete Job</button>
+    <button (click)= "update()" type="submit" class="btn btn-success">Update Job</button>
+</form>
