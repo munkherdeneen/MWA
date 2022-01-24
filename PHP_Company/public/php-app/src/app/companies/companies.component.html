@@ -1,0 +1,26 @@
+<br /><h3>The top companies are:</h3><br />
+
+
+<ul>
+    <li *ngFor="let company of companies">
+        <a routerLink="/company/{{company._id}}">{{company.rank}}. {{company.name}} - {{company.industry}} 
+            <ul>
+                <li *ngFor="let person of company.keyPeople">
+                    {{person.name}} - {{person.title}}
+                </li>
+            </ul>
+        </a><br/>
+    </li>
+</ul>
+
+<br />
+
+Add new company: <br /><br />
+<form>
+    Name: <input type="text" id="name" name="name" required [(ngModel)]="newCompany.name" />
+    Rank: <input type="number" id="rank" name="rank" required [(ngModel)]="newCompany.rank" />
+    Industry: <input type="text" id="industry" name="industry" required [(ngModel)]="newCompany.industry" />
+    <br />
+    <br />
+    <button (click)="save()" type="submit" class="btn btn-success">Add Company</button>
+</form>

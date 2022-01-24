@@ -1,0 +1,31 @@
+<h1>{{company.name}}</h1>
+<br/>
+Rank: {{company.rank}}
+<br/>
+Industry: {{company.industry}}
+<br/>
+<ul>
+    <li *ngFor="let person of people">
+        <a routerLink="/companies/{{company._id}}/keyPeople/{{person._id}}">{{person.name}} - {{person.title}}</a>
+    </li>
+</ul>
+<br/>
+<br/>
+
+<h3>Update the company:</h3> <br/>
+<form>
+    Name: <input type="text" id="name" name="name" required [(ngModel)]= "company.name" />
+    Rank: <input type="text" id="rank" name="rank" required [(ngModel)]= "company.rank" />
+    Industry: <input type="text" id="industry" name="industry" required [(ngModel)]= "company.industry" />
+    <br/>
+    <br/>
+    Kep People:
+    <li *ngFor="let person of people">
+        Name: <input type="text" id="pname" name="pname" required [(ngModel)]= "person.name" />
+        Title: <input type="text" id="title" name="title" required [(ngModel)]= "person.title" />
+        <button (click)= "deletePerson(company._id, person._id)" type="submit" class="btn btn-success">Delete person</button>
+    </li>
+    <br/><br/>
+    <button (click)= "delete()" type="submit" class="btn btn-success">Delete company</button>
+    <button (click)= "update()" type="submit" class="btn btn-success">Update company</button>
+</form>

@@ -1,0 +1,14 @@
+<h1>{{person.name}}</h1>
+<br/>
+Title: {{person.title}}
+<br/>
+<br/>
+
+<h3>Update the person:</h3> <br/>
+<form>
+    Name: <input type="text" id="name" name="name" required [(ngModel)]= "person.name" />
+    Rank: <input type="text" id="rank" name="rank" required [(ngModel)]= "person.title" />
+    <br/>
+    <button (click)= "delete()" type="submit" class="btn btn-success">Delete person</button>
+    <button (click)= "update()" type="submit" class="btn btn-success">Update person</button>
+</form>
