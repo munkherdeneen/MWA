@@ -1,0 +1,11 @@
+<!-- Student List -->
+<div style="text-align:center">
+    <h2>
+        Students
+    </h2>
+    <ul *ngFor="let student of students">
+        <li>
+            <a routerLink="/student/{{student._id}}">{{student.name}} - {{student.gpa}}</a>
+        </li>
+    </ul>
+</div>

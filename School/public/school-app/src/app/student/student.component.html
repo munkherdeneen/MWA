@@ -1,0 +1,14 @@
+<h1>{{student.name}}</h1>
+<br/>
+GPA: {{student.gpa}}
+<br/>
+<br/>
+
+<h3>Update the student:</h3> <br/>
+<form>
+    Name: <input type="text" id="name" name="name" required [(ngModel)]= "student.name" />
+    GPA: <input type="text" id="rank" name="rank" required [(ngModel)]= "student.gpa" />
+    <br/><br/>
+    <button type="submit" class="btn btn-success">Delete student</button>
+    <button type="submit" class="btn btn-success">Update student</button>
+</form>
